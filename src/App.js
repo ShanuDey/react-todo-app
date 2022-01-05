@@ -27,6 +27,7 @@ function App() {
           },
         ];
       });
+      inputTodoRef.current.value = "";
     }
   }
 
