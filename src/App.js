@@ -1,8 +1,13 @@
 import React, { useState, useRef } from "react";
 import TodoList from "./TodoList";
 
+const LOCAL_STORAGE_KEY = "MyTodoKey";
+
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const stotedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    return stotedTodos || [];
+  });
   const inputTodoRef = useRef("");
 
   function handleAddTodo() {
@@ -17,6 +22,7 @@ function App() {
         },
       ];
     });
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }
 
   function handleClearTodo() {
