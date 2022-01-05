@@ -34,12 +34,22 @@ function App() {
     setTodos([]);
   }
 
+  function handleCheckboxStateChange(id, state) {
+    const updatedTodoIndex = todos.findIndex((todo) => todo.ID === id);
+    let tempTodo = [...todos];
+    tempTodo[updatedTodoIndex].COMPLETED = state;
+    setTodos(tempTodo);
+  }
+
   return (
     <>
       <input type="text" ref={inputTodoRef} />
       <button onClick={handleAddTodo}>Add Todo</button>
       <button onClick={handleClearTodo}>Clear Todo</button>
-      <TodoList todos={todos} />
+      <TodoList
+        todos={todos}
+        handleCheckboxStateChange={handleCheckboxStateChange}
+      />
     </>
   );
 }
