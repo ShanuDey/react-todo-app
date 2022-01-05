@@ -31,7 +31,7 @@ function App() {
   }
 
   function handleClearTodo() {
-    setTodos([]);
+    setTodos(() => todos.filter((todo) => !todo.COMPLETED));
   }
 
   function handleCheckboxStateChange(id, state) {
