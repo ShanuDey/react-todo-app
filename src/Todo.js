@@ -17,7 +17,7 @@ export default function Todo({ todo, handleCheckboxStateChange }) {
           ref={todoCheckBoxRef}
           onChange={handleChange}
         />
-        {todo.ID},{todo.NAME}
+        {todo.NAME}
       </label>
     </div>
   );
