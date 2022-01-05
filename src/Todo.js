@@ -5,7 +5,7 @@ export default function Todo({ todo }) {
     <div>
       <label>
         <input type="checkbox" />
-        {todo}
+        {todo.ID},{todo.NAME}
       </label>
     </div>
   );

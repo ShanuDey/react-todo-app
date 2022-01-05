@@ -2,12 +2,20 @@ import React, { useState, useRef } from "react";
 import TodoList from "./TodoList";
 
 function App() {
-  const [todos, setTodos] = useState(["Todo 1", "Todo 2"]);
+  const [todos, setTodos] = useState([]);
   const inputTodoRef = useRef("");
 
   function handleAddTodo() {
     const newTodo = inputTodoRef.current.value;
-    setTodos([...todos, newTodo]);
+    setTodos(() => {
+      return [
+        ...todos,
+        {
+          ID: todos.length,
+          NAME: newTodo,
+        },
+      ];
+    });
   }
 
   return (
