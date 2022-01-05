@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
 
 const LOCAL_STORAGE_KEY = "MyTodoKey";
@@ -9,6 +9,10 @@ function App() {
     return stotedTodos || [];
   });
   const inputTodoRef = useRef("");
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
 
   function handleAddTodo() {
     const newTodo = inputTodoRef.current.value;
@@ -22,7 +26,6 @@ function App() {
         },
       ];
     });
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }
 
   function handleClearTodo() {
