@@ -18,11 +18,15 @@ function App() {
     });
   }
 
+  function handleClearTodo() {
+    setTodos([]);
+  }
+
   return (
     <>
       <input type="text" ref={inputTodoRef} />
       <button onClick={handleAddTodo}>Add Todo</button>
-      <button>Clear Todo</button>
+      <button onClick={handleClearTodo}>Clear Todo</button>
       <TodoList todos={todos} />
     </>
   );
