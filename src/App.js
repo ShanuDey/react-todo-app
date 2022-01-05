@@ -16,16 +16,18 @@ function App() {
 
   function handleAddTodo() {
     const newTodo = inputTodoRef.current.value;
-    setTodos(() => {
-      return [
-        ...todos,
-        {
-          ID: todos.length,
-          NAME: newTodo,
-          COMPLETED: false,
-        },
-      ];
-    });
+    if (newTodo) {
+      setTodos(() => {
+        return [
+          ...todos,
+          {
+            ID: todos.length,
+            NAME: newTodo,
+            COMPLETED: false,
+          },
+        ];
+      });
+    }
   }
 
   function handleClearTodo() {
