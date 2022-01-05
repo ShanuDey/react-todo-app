@@ -13,6 +13,7 @@ function App() {
         {
           ID: todos.length,
           NAME: newTodo,
+          COMPLETED: false,
         },
       ];
     });
