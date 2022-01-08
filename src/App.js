@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import TodoList from "./TodoList";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Button, Form, Container, Stack } from "react-bootstrap";
+import "./style/App.css";
 
 const LOCAL_STORAGE_KEY = "MyTodoKey";
 
@@ -44,13 +47,37 @@ function App() {
 
   return (
     <>
-      <input type="text" ref={inputTodoRef} />
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button onClick={handleClearTodo}>Clear Todo</button>
-      <TodoList
-        todos={todos}
-        handleCheckboxStateChange={handleCheckboxStateChange}
-      />
+      <Container className="my-5">
+        <Stack direction="horizontal" gap={3}>
+          <Form.Control
+            className="me-auto"
+            type="text"
+            ref={inputTodoRef}
+            placeholder="Enter todo"
+          />
+          <Button
+            variant="outline-success"
+            className="custom-button"
+            onClick={handleAddTodo}
+          >
+            Add Todo
+          </Button>
+          <div className="vr" />
+          <Button
+            variant="outline-danger"
+            className="custom-button"
+            onClick={handleClearTodo}
+          >
+            Clear Todo
+          </Button>
+        </Stack>
+      </Container>
+      <Container>
+        <TodoList
+          todos={todos}
+          handleCheckboxStateChange={handleCheckboxStateChange}
+        />
+      </Container>
     </>
   );
 }
