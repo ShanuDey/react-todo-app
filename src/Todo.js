@@ -15,7 +15,7 @@ export default function Todo({ todo, handleCheckboxStateChange }) {
           className="form-check-input"
           type="checkbox"
           checked={todo.COMPLETED}
-          onChange={(e) => setCheckState(e.target.value)}
+          onChange={(e) => setCheckState(e.target.checked)}
         />
         <label className="form-check-label" htmlFor="flexCheckChecked">
           {todo.NAME}
