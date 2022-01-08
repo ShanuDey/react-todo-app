@@ -48,36 +48,38 @@ function App() {
 
   return (
     <>
-      <Container className="my-5">
-        <Stack direction="horizontal" gap={3}>
-          <Form.Control
-            className="me-auto"
-            type="text"
-            ref={inputTodoRef}
-            placeholder="Enter todo"
-          />
-          <Button
-            variant="outline-success"
-            className="custom-button"
-            onClick={handleAddTodo}
-          >
-            Add Todo
-          </Button>
-          <div className="vr" />
-          <Button
-            variant="outline-danger"
-            className="custom-button"
-            onClick={handleClearTodo}
-          >
-            Clear Todo
-          </Button>
-        </Stack>
-      </Container>
-      <Container>
+      <Container className="custom-todolist-container">
         <TodoList
           todos={todos}
           handleCheckboxStateChange={handleCheckboxStateChange}
         />
+      </Container>
+      <Container>
+        <Container className="custom-header">
+          <Stack direction="horizontal" gap={3}>
+            <Form.Control
+              className="me-auto"
+              type="text"
+              ref={inputTodoRef}
+              placeholder="Enter todo"
+            />
+            <Button
+              variant="outline-success"
+              className="custom-button"
+              onClick={handleAddTodo}
+            >
+              Add Todo
+            </Button>
+            <div className="vr" />
+            <Button
+              variant="outline-danger"
+              className="custom-button"
+              onClick={handleClearTodo}
+            >
+              Clear Todo
+            </Button>
+          </Stack>
+        </Container>
       </Container>
     </>
   );
