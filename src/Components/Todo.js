@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ListGroup } from "react-bootstrap";
 
 export default function Todo({ todo, handleCheckboxStateChange }) {
-  const [checkState, setCheckState] = useState(false);
+  const [checkState, setCheckState] = useState(todo.COMPLETED);
 
   useEffect(() => {
     handleCheckboxStateChange(todo.ID, checkState);
