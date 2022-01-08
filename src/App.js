@@ -3,6 +3,7 @@ import TodoList from "./TodoList";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Button, Form, Container, Stack } from "react-bootstrap";
 import "./style/App.css";
+import { v4 as uuidv4 } from "uuid";
 
 const LOCAL_STORAGE_KEY = "MyTodoKey";
 
@@ -24,7 +25,7 @@ function App() {
         return [
           ...todos,
           {
-            ID: todos.length,
+            ID: uuidv4(),
             NAME: newTodo,
             COMPLETED: false,
           },
