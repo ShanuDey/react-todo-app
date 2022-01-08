@@ -1,12 +1,11 @@
-import React, { useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Todo({ todo, handleCheckboxStateChange }) {
-  const todoCheckBoxRef = useRef(false);
+  const [checkState, setCheckState] = useState(false);
 
-  function handleChange() {
-    const state = todoCheckBoxRef.current.checked;
-    handleCheckboxStateChange(todo.ID, state);
-  }
+  useEffect(() => {
+    handleCheckboxStateChange(todo.ID, checkState);
+  }, [checkState]);
 
   return (
     <div className="form-check">
@@ -14,8 +13,7 @@ export default function Todo({ todo, handleCheckboxStateChange }) {
         className="form-check-input"
         type="checkbox"
         checked={todo.COMPLETED}
-        ref={todoCheckBoxRef}
-        onChange={handleChange}
+        onChange={(e) => setCheckState(e.target.value)}
       />
       <label className="form-check-label" htmlFor="flexCheckChecked">
         {todo.NAME}
