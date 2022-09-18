@@ -12,12 +12,17 @@ export default function Todo({ todo, handleCheckboxStateChange }) {
     <ListGroup.Item>
       <div className="form-check ">
         <input
+          id="TodoItemCheckBox"
           className="form-check-input"
           type="checkbox"
           checked={todo.COMPLETED}
           onChange={(e) => setCheckState(e.target.checked)}
         />
-        <label className="form-check-label" htmlFor="flexCheckChecked">
+        <label
+          className="form-check-label"
+          htmlFor="flexCheckChecked"
+          id="TodoItemText"
+        >
           {todo.NAME}
         </label>
       </div>

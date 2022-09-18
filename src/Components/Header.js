@@ -6,7 +6,9 @@ export default function Header() {
     <div>
       <Navbar fixed="top" variant="light" bg="light">
         <Container style={{ justifyContent: "center" }}>
-          <Navbar.Brand href="#">Todo List</Navbar.Brand>
+          <Navbar.Brand href="#" id="TodoHeaderText">
+            Todo List
+          </Navbar.Brand>
         </Container>
       </Navbar>
     </div>

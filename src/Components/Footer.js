@@ -13,12 +13,14 @@ export default function Footer(props) {
             className="custom-center-footer"
           >
             <Form.Control
+              id="TodoTextInput"
               className="me-auto"
               type="text"
               ref={props.inputTodoRef}
               placeholder="Enter todo"
             />
             <Button
+              id="AddTodoButton"
               variant="outline-success"
               className="custom-button"
               onClick={props.handleAddTodo}
@@ -27,6 +29,7 @@ export default function Footer(props) {
             </Button>
             <div className="vr" />
             <Button
+              id="ClearTodoButton"
               variant="outline-danger"
               className="custom-button"
               onClick={props.handleClearTodo}
