@@ -9,7 +9,7 @@ export default function Todo({ todo, handleCheckboxStateChange }) {
   }, [checkState]);
 
   return (
-    <ListGroup.Item>
+    <ListGroup.Item id="TodoListItem">
       <div className="form-check ">
         <input
           id="TodoItemCheckBox"
