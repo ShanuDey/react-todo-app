@@ -23,12 +23,12 @@ function App() {
     if (newTodo) {
       setTodos(() => {
         return [
-          ...todos,
           {
             ID: uuidv4(),
             NAME: newTodo,
             COMPLETED: false,
           },
+          ...todos
         ];
       });
       inputTodoRef.current.value = "";
